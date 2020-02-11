@@ -25,17 +25,17 @@ void setState(OdomDebug::state_t state) {
 	// `state.x.convert(inch)` or `state.theta.convert(radian)`
 	// you can use any length or angle unit
 	// example commands:
-	 state = chassis->getState();
-	 //printf(str(state.x));
-	 //odomSetPosition(state.x, state.y, state.theta);
+	 auto stateUWU = chassis->getState();
+	 auto debugTest = std::to_string(stateUWU.x);
+	 printf(debugTest);
+	 //odomSetPosition(stateUWU.x, stateUWU.y, stateUWU.theta);
 	 //odomSetPosition(state.x.convert(inch), state.y.convert(inch), state.theta.convert(radian));
 }
-
 void resetSensors() {
 	// reset sensors and reset odometry
 	// example commands:
-	 odomResetSensors();
-	 odomSetPosition(0, 0, 0);
+	 //odomResetSensors();
+	 //odomSetPosition(0, 0, 0);
 }
 
 void opcontrol() {
@@ -50,7 +50,7 @@ void opcontrol() {
    	// you can use QUnits for the x, y, and theta,
    	// or you can use doubles, in inches and radians
     // the last `middle` paramiter is optional, depending on your robot
-     //display.setData({x, y, theta}, {left, right, middle});
+    //display.setData({x, y, theta}, {left, right, middle});
 
     // display.setData({0, 0, 0}, {0, 0});
     // display.setData({0_in, 0_in, 0_deg}, {0, 0, 0});
